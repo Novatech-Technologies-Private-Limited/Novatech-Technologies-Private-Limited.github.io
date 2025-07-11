@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://novatech-technologies-private-limited.github.io/sitemap.xml
