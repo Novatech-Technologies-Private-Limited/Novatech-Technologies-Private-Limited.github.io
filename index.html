@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novatech Technologies Pvt Ltd</title>
+    <link rel="stylesheet" href="Novatech.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Favicon for Browser Tab -->
+    <link rel="icon" type="image/jpg" href="logo.jpg" />
+
+  </head>
+  <body>
+    <header>
+      <div class="container nav-wrapper">
+        <div class="logo" style="margin-left:0;">Novatech Technologies Pvt Ltd</div>
+        <nav id="navbar">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/bg-video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="hero-content container">
+    <h1 data-aos="fade-up" data-aos-delay="100">We Build Tomorrow’s Technology</h1>
+    <p data-aos="fade-up" data-aos-delay="300">
+      Smart solutions. Real results. We empower businesses with full-stack,
+      AI-driven innovations.
+    </p>
+    <a href="contact.html" class="btn" data-aos="zoom-in" data-aos-delay="500">Let’s Talk</a>
+  </div>
+</section>
+
+
+    <section id="about" class="section">
+      <div class="container about-flex">
+        <div class="about-text" data-aos="fade-right" data-aos-duration="1000">
+          <h2>About Novatech</h2>
+          <p>
+            Novatech Technologies Pvt Ltd is a visionary technology company
+            driven by a mission to create transformative digital solutions. With
+            deep expertise in full-stack development, artificial intelligence,
+            and cloud infrastructure, we help startups, enterprises, and
+            government agencies solve real-world challenges through technology.
+          </p>
+
+          <p>
+            Founded with a spirit of innovation and a commitment to excellence,
+            we combine technical skill with strategic thinking. Our engineers
+            and designers don’t just build software — they craft systems that
+            are secure, scalable, and aligned with our clients' long-term goals.
+          </p>
+
+          <h3>Our Vision</h3>
+          <p>
+            To become a global leader in digital innovation, empowering
+            businesses with intelligent, human-centric technology that makes a
+            measurable difference in the world.
+          </p>
+        </div>
+
+        <div class="about-img" data-aos="zoom-in" data-aos-duration="1000">
+          <img src="assets/about-team.jpg" alt="Our Team" />
+        </div>
+      </div>
+
+      <div
+        class="container"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+      >
+        <h3>Why Choose Us</h3>
+        <ul class="about-points">
+          <li data-aos="fade-up" data-aos-delay="100">
+            🚀 <strong>Innovation-First Approach:</strong> We constantly adopt
+            cutting-edge technologies to keep your business ahead of the curve.
+          </li>
+          <li data-aos="fade-up" data-aos-delay="200">
+            👨‍💻 <strong>Experienced Team:</strong> Our developers, designers, and
+            analysts bring years of industry experience and creativity.
+          </li>
+          <li data-aos="fade-up" data-aos-delay="300">
+            🔒 <strong>Security & Reliability:</strong> We build secure,
+            resilient systems that are tested for performance and scalability.
+          </li>
+          <li data-aos="fade-up" data-aos-delay="400">
+            🤝 <strong>Client-Centric Process:</strong> Transparent
+            communication, agile delivery, and deep collaboration drive every
+            project.
+          </li>
+          <li data-aos="fade-up" data-aos-delay="500">
+            📈 <strong>End-to-End Services:</strong> From idea to execution and
+            beyond — we support the full lifecycle of your product.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="services" class="section light" data-aos="fade-up">
+      <div class="container">
+        <h2>Our Services</h2>
+        <p>
+          We offer a wide range of technology solutions tailored to modern
+          business challenges. Explore our full offerings on our
+          <a href="services.html" class="text-link">Services Page</a>.
+        </p>
+        <ul class="about-points">
+          <li>⚙️ Full-Stack Web & Mobile App Development</li>
+          <li>🤖 AI & Machine Learning Solutions</li>
+          <li>🖌️ UI/UX Design</li>
+          <li>☁️ Cloud & DevOps Consulting</li>
+          <li>🧩 WordPress Website Development</li>
+          <li>📚 IT Training for Beginners & Teams</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section" data-aos="fade-up">
+      <div class="container">
+        <h2>Let’s Connect</h2>
+        <p>
+          Have a project in mind or just want to collaborate? Reach out today.
+        </p>
+        <ul class="contact-details">
+          <li><strong>Email:</strong> shaikuzair57@gmail.com</li>
+          <li><strong>Phone:</strong> +91 7842448944</li>
+          <li><strong>Location:</strong> Madanapalli, India</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        &copy; 2025 Novatech Technologies Pvt Ltd. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
+  }
+      AOS.init({
+        once: true,
+        duration: 1000,
+        easing: "ease-in-out",
+      });
+    </script>
+  </body>
+</html>

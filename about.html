@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Novatech</title>
+  <link rel="stylesheet" href="Novatech.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrapper">
+    <div class="logo">Novatech</div>
+    <nav id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<section class="section" id="about">
+  <div class="container about-flex">
+    <div class="about-text" data-aos="fade-right">
+      <h2>About Novatech</h2>
+      <p>Novatech Technologies Pvt Ltd is an innovative software company headquartered in Hyderabad, India. We specialize in building intelligent, secure, and scalable systems tailored for startups, enterprises, and institutions.</p>
+      <p>Founded with a mission to empower the digital future, we deliver high-performance products and services across Full Stack Development, AI/ML, Cloud, and WordPress solutions.</p>
+    </div>
+    <div class="about-img" data-aos="zoom-in">
+      <img src="assets/about-team.jpg" alt="Novatech Team" />
+    </div>
+  </div>
+</section>
+
+<section class="section light" data-aos="fade-up">
+  <div class="container">
+    <h3>Our Mission & Vision</h3>
+    <p>We envision a world where technology empowers businesses to thrive. Our mission is to create solutions that are smart, simple, and scalable — accelerating innovation for clients across industries.</p>
+    <p>We blend cutting-edge technology with a user-first approach, focusing on solving real problems and delivering measurable impact.</p>
+  </div>
+</section>
+
+<section class="section" data-aos="fade-up">
+  <div class="container">
+    <h3>Core Values</h3>
+    <ul class="about-points">
+      <li>💡 <strong>Innovation:</strong> We stay ahead of trends and build for the future.</li>
+      <li>🎯 <strong>Excellence:</strong> Precision, performance, and passion drive everything we do.</li>
+      <li>🧠 <strong>Integrity:</strong> We’re honest, transparent, and client-first in all relationships.</li>
+      <li>🤝 <strong>Collaboration:</strong> We work closely with clients and teams to co-create success.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    &copy; 2025 Novatech Technologies Pvt Ltd. All rights reserved.
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  function toggleMenu() {
+    document.getElementById('navbar').classList.toggle('show');
+  }
+</script>
+</body>
+</html>
