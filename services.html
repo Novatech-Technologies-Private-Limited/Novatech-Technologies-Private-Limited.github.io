@@ -1,109 +1,515 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Novatech Technologies Pvt Ltd is a tech powerhouse delivering AI, Full-Stack, and Cloud solutions to modern businesses."
-    />
-    <meta
-      name="keywords"
-      content="Novatech, AI development, full-stack services, tech company India, Novatech Technologies Pvt Ltd"
-    />
+    <title>Our Services | Novatech Technologies Private Limited</title>
+    <meta name="description" content="Discover our full range of technology services: Full Stack Development, AI/ML, Cloud, WordPress, UI/UX Design, and IT Training for beginners." />
+    <meta name="keywords" content="Novatech, tech services, AI development, full-stack, cloud solutions, IT training India" />
     <meta name="author" content="Novatech Technologies Pvt Ltd" />
 
-    <title>Our Services | Novatech Technologies Private Limited</title>
-    <link rel="stylesheet" href="Novatech.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  </head>
-  <body>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="Novatech.css" />
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+            --white: #ffffff;
+            --text-dark: #1a202c;
+            --text-light: #a0aec0;
+            --background-light: #f7fafc;
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.06);
+            --shadow-xl: 0 20px 25px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.04);
+            --border-light: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--background-light);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav#navbar {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav#navbar a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav#navbar a:hover {
+            color: #667eea;
+        }
+
+        nav#navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width 0.3s ease;
+        }
+
+        nav#navbar a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 80vh;
+            background: var(--dark-gradient);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a0aec0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-1 { top: 15%; right: 10%; width: 80px; height: 80px; animation-delay: 0s; }
+        .floating-2 { bottom: 20%; left: 15%; width: 60px; height: 60px; animation-delay: 2s; }
+        .floating-3 { top: 60%; right: 5%; width: 70px; height: 70px; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Main Service Section */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .light-bg {
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 1rem auto 0;
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .service-content {
+            padding: 1.8rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Icon-based Cards Alternative (Optional) */
+        .icon-service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .icon-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .icon-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .icon-card i {
+            font-size: 2.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .icon-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .icon-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper nav {
+                display: none;
+                flex-direction: column;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1rem 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-wrapper nav.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
     <header>
-      <div class="container nav-wrapper">
-        <div class="logo">Novatech</div>
-        <nav id="navbar">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      </div>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">Novatech</a>
+            <nav id="navbar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </div>
     </header>
 
-    <section class="section">
-      <div class="container">
-        <h2 data-aos="fade-down">Explore Our Services</h2>
-        <div class="services-grid">
-          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/fullstack.jpg" alt="Full Stack Development" />
-            <h3>Full Stack Development</h3>
-            <p>
-              Custom-built web and mobile applications using modern frameworks,
-              optimized for performance and scalability.
-            </p>
-          </div>
-
-          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/ai.jpg" alt="AI Solutions" />
-            <h3>AI & Machine Learning</h3>
-            <p>
-              Automate processes, predict behavior, and enhance business
-              intelligence with ML & AI solutions.
-            </p>
-          </div>
-
-          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-            <img src="assets/design.jpg" alt="UI/UX Design" />
-            <h3>UI/UX Design</h3>
-            <p>
-              Designing intuitive, modern, and visually pleasing user interfaces
-              for web, mobile, and enterprise platforms.
-            </p>
-          </div>
-
-          <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-            <img src="assets/cloud.jpg" alt="Cloud Consulting" />
-            <h3>Cloud & DevOps</h3>
-            <p>
-              Deploy and manage scalable, secure, and resilient infrastructure
-              using AWS, Azure, Docker, and CI/CD pipelines.
-            </p>
-          </div>
-
-          <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-            <img src="assets/wordpress.jpg" alt="WordPress Solutions" />
-            <h3>WordPress Development</h3>
-            <p>
-              Fast, SEO-optimized, and mobile-responsive WordPress sites for
-              businesses, portfolios, and e-commerce needs.
-            </p>
-          </div>
-
-          <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-            <img src="assets/training.jpg" alt="Training Programs" />
-            <h3>IT Training for Newcomers</h3>
-            <p>
-              Hands-on training in web development, programming fundamentals,
-              and career guidance for beginners and teams.
-            </p>
-          </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        <div class="floating-element floating-3"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-cogs"></i> End-to-End Solutions</div>
+                <h1>Transform Ideas into Powerful Digital Experiences</h1>
+                <p class="hero-subtitle">
+                    From concept to code, we deliver cutting-edge technology services tailored to your business goals.
+                </p>
+            </div>
         </div>
-      </div>
     </section>
 
+    <!-- Core Services -->
+    <section class="section light-bg" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-description">
+                    We combine innovation, expertise, and client focus to build future-ready digital solutions.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/fullstack.jpg" alt="Full Stack Development" class="service-img" />
+                    <div class="service-content">
+                        <h3>Full Stack Development</h3>
+                        <p>
+                            Custom web and mobile applications using MERN, Python, Node.js, and modern frameworks — built for speed, scalability, and security.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/ai.jpg" alt="AI & Machine Learning" class="service-img" />
+                    <div class="service-content">
+                        <h3>AI & Machine Learning</h3>
+                        <p>
+                            Intelligent automation, predictive analytics, chatbots, and NLP systems that enhance decision-making and customer engagement.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/design.jpg" alt="UI/UX Design" class="service-img" />
+                    <div class="service-content">
+                        <h3>UI/UX Design</h3>
+                        <p>
+                            User-centered designs that are intuitive, accessible, and visually stunning across platforms and devices.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="assets/cloud.jpg" alt="Cloud & DevOps" class="service-img" />
+                    <div class="service-content">
+                        <h3>Cloud & DevOps</h3>
+                        <p>
+                            Secure, scalable infrastructure on AWS/Azure with CI/CD pipelines, Docker, Kubernetes, and automated monitoring.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="assets/wordpress.jpg" alt="WordPress Development" class="service-img" />
+                    <div class="service-content">
+                        <h3>WordPress Development</h3>
+                        <p>
+                            High-performance, SEO-friendly websites and e-commerce stores with custom themes, plugins, and integrations.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <img src="assets/training.jpg" alt="IT Training" class="service-img" />
+                    <div class="service-content">
+                        <h3>IT Training for Beginners</h3>
+                        <p>
+                            Hands-on programs in web development, programming basics, and career guidance — ideal for students and aspiring developers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us? (Optional Extension) -->
+    <section class="section" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Our Services?</h2>
+            </div>
+            <div class="icon-service-grid">
+                <div class="icon-card">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Fast Delivery</h4>
+                    <p>Agile workflows ensure rapid prototyping and timely project completion.</p>
+                </div>
+                <div class="icon-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Secure by Design</h4>
+                    <p>All solutions follow best practices in data protection and cybersecurity.</p>
+                </div>
+                <div class="icon-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>Dedicated Support</h4>
+                    <p>From kickoff to launch and beyond — we’re with you every step of the way.</p>
+                </div>
+                <div class="icon-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Talent Development</h4>
+                    <p>We train tomorrow’s developers while delivering real-world projects today.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="text-align: center; background: var(--dark-gradient); color: var(--white);">
+        <div class="container">
+            <h2 data-aos="fade-up">Ready to Build Something Great?</h2>
+            <p data-aos="fade-up" data-aos-delay="100" style="max-width: 600px; margin: 1rem auto; color: rgba(255,255,255,0.8);">
+                Whether you need a custom app, AI integration, or team training — we’ve got you covered.
+            </p>
+            <a href="contact.html" class="btn btn-primary" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-paper-plane"></i> Get Started
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-      <div class="container">
-        &copy; 2025 Novatech Technologies Pvt Ltd. All rights reserved.
-      </div>
+        <div class="container">
+            <p>&copy; 2025 Novatech Technologies Private Limited. All rights reserved.</p>
+            <p>CIN: U85500AP2025PTC119897 | Madanapalle, Andhra Pradesh</p>
+        </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init();
-      function toggleMenu() {
-        document.getElementById("navbar").classList.toggle("show");
-      }
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out',
+            once: true
+        });
+
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("show");
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navbar = document.getElementById('navbar');
+            const menuToggle = document.querySelector('.menu-toggle');
+            if (!menuToggle.contains(e.target) && !navbar.contains(e.target)) {
+                navbar.classList.remove('show');
+            }
+        });
     </script>
-  </body>
+</body>
 </html>

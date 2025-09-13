@@ -1,184 +1,928 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="google-site-verification" content="-ivMBZv43pbsdWjb8Urm4k_U4KLiHBPstHfiJ3Th03A" />
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Novatech Technologies Private Limited</title>
-    <link rel="stylesheet" href="Novatech.css" />
-    <meta
-      name="description"
-      content="Novatech Technologies Pvt Ltd is a tech powerhouse delivering AI, Full-Stack, and Cloud solutions to modern businesses."
-    />
-    <meta
-      name="keywords"
-      content="Novatech, AI development, full-stack services, tech company India, Novatech Technologies Pvt Ltd"
-    />
-    <meta name="author" content="Novatech Technologies Pvt Ltd" />
+    <title>Novatech Technologies Private Limited - IT Solutions & Consulting</title>
+    <meta name="description" content="Novatech Technologies Private Limited - Leading provider of IT services, consulting, web development, applications, chatbots, and digital marketing solutions." />
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Favicon for Browser Tab -->
-    <link rel="icon" type="image/jpg" href="logo.jpg" />
-  </head>
-  <body>
-    <header>
-      <div class="container nav-wrapper">
-        <div class="logo" style="margin-left: 0">
-          Novatech Technologies Pvt Ltd
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f5576c;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --text-muted: #718096;
+            --background-light: #f7fafc;
+            --white: #ffffff;
+            --border-light: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.06);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.06);
+            --shadow-xl: 0 20px 25px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .cta-nav {
+            background: var(--primary-gradient);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-nav::after {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--dark-gradient);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a0aec0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-1 {
+            top: 20%;
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 0s;
+        }
+
+        .floating-2 {
+            bottom: 20%;
+            right: 20%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 2s;
+        }
+
+        .floating-3 {
+            top: 60%;
+            right: 5%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Services Preview */
+        .services-preview {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--primary-gradient);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: var(--dark-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .service-icon i {
+            font-size: 1.8rem;
+            color: var(--white);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            transform: translateX(5px);
+        }
+
+        /* Company Stats */
+        .stats-section {
+            padding: 80px 0;
+            background: var(--background-light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gradient);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-gradient);
+            transform: translateY(-3px);
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Page Navigation Buttons */
+        .page-nav {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .page-nav-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.3);
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .page-nav-btn.active,
+        .page-nav-btn:hover {
+            background: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .page-nav {
+                display: none;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem 0;
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#home" class="logo">Novatech Technologies</a>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="contact.html" class="nav-link cta-nav">Get Started</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <nav id="navbar">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact</a>
-        </nav>
+    </nav>
 
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      </div>
-    </header>
+    <!-- Main Content -->
+    <main id="page-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="floating-element floating-1"></div>
+            <div class="floating-element floating-2"></div>
+            <div class="floating-element floating-3"></div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-certificate"></i>
+                        CIN: U85500AP2025PTC119897
+                    </div>
+                    <h1>Transform Your Business with Cutting-Edge IT Solutions</h1>
+                    <p class="hero-subtitle">
+                        We deliver world-class consulting, web development, mobile applications, 
+                        AI chatbots, and digital marketing solutions that drive growth and innovation.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="services.html" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Explore Services
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary">
+                            <i class="fas fa-phone"></i>
+                            Let's Talk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="home" class="hero">
-      <video autoplay muted loop playsinline class="bg-video">
-        <source src="assets/bg-video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+        <!-- Services Preview -->
+        <section class="services-preview">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Our Expertise</div>
+                    <h2 class="section-title">Comprehensive IT Solutions</h2>
+                    <p class="section-description">
+                        From strategic consulting to cutting-edge development, we provide 
+                        end-to-end technology solutions that propel your business forward.
+                    </p>
+                </div>
 
-      <div class="hero-content container">
-        <h1 data-aos="fade-up" data-aos-delay="100">
-          We Build Tomorrow’s Technology
-        </h1>
-        <p data-aos="fade-up" data-aos-delay="300">
-          Smart solutions. Real results. We empower businesses with full-stack,
-          AI-driven innovations.
-        </p>
-        <a
-          href="contact.html"
-          class="btn"
-          data-aos="zoom-in"
-          data-aos-delay="500"
-          >Let’s Talk</a
-        >
-      </div>
-    </section>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>IT Consulting</h3>
+                        <p>Strategic technology consulting to optimize your business processes and drive digital transformation.</p>
+                        <a href="services.html" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
 
-    <section id="about" class="section">
-      <div class="container about-flex">
-        <div class="about-text" data-aos="fade-right" data-aos-duration="1000">
-          <h2>About Novatech</h2>
-          <p>
-            Novatech Technologies Pvt Ltd is a visionary technology company
-            driven by a mission to create transformative digital solutions. With
-            deep expertise in full-stack development, artificial intelligence,
-            and cloud infrastructure, we help startups, enterprises, and
-            government agencies solve real-world challenges through technology.
-          </p>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Web Development</h3>
+                        <p>Custom web applications, e-commerce platforms, and responsive websites built with modern technologies.</p>
+                        <a href="services.html" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
 
-          <p>
-            Founded with a spirit of innovation and a commitment to excellence,
-            we combine technical skill with strategic thinking. Our engineers
-            and designers don’t just build software — they craft systems that
-            are secure, scalable, and aligned with our clients' long-term goals.
-          </p>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Applications</h3>
+                        <p>Native and cross-platform mobile apps for iOS and Android with seamless user experiences.</p>
+                        <a href="services.html" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
 
-          <h3>Our Vision</h3>
-          <p>
-            To become a global leader in digital innovation, empowering
-            businesses with intelligent, human-centric technology that makes a
-            measurable difference in the world.
-          </p>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI Chatbots</h3>
+                        <p>Intelligent conversational AI solutions to enhance customer service and automate interactions.</p>
+                        <a href="services.html" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Digital Marketing</h3>
+                        <p>Comprehensive social media marketing, SEO, and digital advertising strategies for growth.</p>
+                        <a href="services.html" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Educational Support</h3>
+                        <p>Technology training programs and educational consulting services for institutions and individuals.</p>
+                        <a href="services.html" class="service-link">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Stats -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">₹1,00,000</div>
+                        <div class="stat-label">Authorized Capital</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2025</div>
+                        <div class="stat-label">Established</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Directors</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Technologies</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Page Navigation Dots -->
+    <div class="page-nav">
+        <div class="page-nav-btn active" data-page="home"></div>
+        <div class="page-nav-btn" data-page="about"></div>
+        <div class="page-nav-btn" data-page="services"></div>
+        <div class="page-nav-btn" data-page="contact"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Novatech Technologies</h3>
+                    <p>Empowering businesses with innovative IT solutions, consulting services, and digital transformation strategies.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">IT Consulting</a></li>
+                        <li><a href="services.html">Web Development</a></li>
+                        <li><a href="services.html">Mobile Apps</a></li>
+                        <li><a href="services.html">AI Chatbots</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+917842448944">+91 7842448944</a></li>
+                        <li><a href="mailto:shaikuzair57@gmail.com">shaikuzair57@gmail.com</a></li>
+                        <li>Madanapalle, Andhra Pradesh</li>
+                        <li>MITS College Angallu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Novatech Technologies Private Limited. All rights reserved.</p>
+                <p>CIN: U85500AP2025PTC119897 | Registration No: 119897</p>
+            </div>
         </div>
-
-        <div class="about-img" data-aos="zoom-in" data-aos-duration="1000">
-          <img src="assets/about-team.jpg" alt="Our Team" />
-        </div>
-      </div>
-
-      <div
-        class="container"
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        data-aos-delay="200"
-      >
-        <h3>Why Choose Us</h3>
-        <ul class="about-points">
-          <li data-aos="fade-up" data-aos-delay="100">
-            🚀 <strong>Innovation-First Approach:</strong> We constantly adopt
-            cutting-edge technologies to keep your business ahead of the curve.
-          </li>
-          <li data-aos="fade-up" data-aos-delay="200">
-            👨‍💻 <strong>Experienced Team:</strong> Our developers, designers, and
-            analysts bring years of industry experience and creativity.
-          </li>
-          <li data-aos="fade-up" data-aos-delay="300">
-            🔒 <strong>Security & Reliability:</strong> We build secure,
-            resilient systems that are tested for performance and scalability.
-          </li>
-          <li data-aos="fade-up" data-aos-delay="400">
-            🤝 <strong>Client-Centric Process:</strong> Transparent
-            communication, agile delivery, and deep collaboration drive every
-            project.
-          </li>
-          <li data-aos="fade-up" data-aos-delay="500">
-            📈 <strong>End-to-End Services:</strong> From idea to execution and
-            beyond — we support the full lifecycle of your product.
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="services" class="section light" data-aos="fade-up">
-      <div class="container">
-        <h2>Our Services</h2>
-        <p>
-          We offer a wide range of technology solutions tailored to modern
-          business challenges. Explore our full offerings on our
-          <a href="services.html" class="text-link">Services Page</a>.
-        </p>
-        <ul class="about-points">
-          <li>⚙️ Full-Stack Web & Mobile App Development</li>
-          <li>🤖 AI & Machine Learning Solutions</li>
-          <li>🖌️ UI/UX Design</li>
-          <li>☁️ Cloud & DevOps Consulting</li>
-          <li>🧩 WordPress Website Development</li>
-          <li>📚 IT Training for Beginners & Teams</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="contact" class="section" data-aos="fade-up">
-      <div class="container">
-        <h2>Let’s Connect</h2>
-        <p>
-          Have a project in mind or just want to collaborate? Reach out today.
-        </p>
-        <ul class="contact-details">
-          <li><strong>Email:</strong> shaikuzair57@gmail.com</li>
-          <li><strong>Phone:</strong> +91 7842448944</li>
-          <li><strong>Location:</strong> Madanapalli, India</li>
-        </ul>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        &copy; 2025 Novatech Technologies Pvt Ltd. All rights reserved.
-      </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      function toggleMenu() {
-        document.getElementById("navbar").classList.toggle("show");
-      }
-      AOS.init({
-        once: true,
-        duration: 1000,
-        easing: "ease-in-out",
-      });
+        // === DOM Elements ===
+        const navbar = document.getElementById('navbar');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const pageNavBtns = document.querySelectorAll('.page-nav-btn');
+
+        // === Navbar Scroll Effect ===
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // === Mobile Menu Toggle ===
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            });
+        });
+
+        // === Page Navigation Dots (Scroll-based Active State) ===
+        const sections = ['home'];
+        const makeActive = (index) => {
+            pageNavBtns.forEach(btn => btn.classList.remove('active'));
+            pageNavBtns[index].classList.add('active');
+        };
+
+        // Simulate active dot change on scroll
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY + 300;
+
+            if (scrollPos < document.querySelector('.services-preview').offsetTop) {
+                makeActive(0);
+            } else if (scrollPos < document.querySelector('.stats-section').offsetTop) {
+                makeActive(1);
+            } else if (scrollPos < document.querySelector('.footer').offsetTop) {
+                makeActive(2);
+            } else {
+                makeActive(3);
+            }
+        });
+
+        // Optional: Smooth scroll to section (if you add more anchor sections)
+        pageNavBtns.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                let targetSection;
+                switch(index) {
+                    case 0: targetSection = 'home'; break;
+                    case 1: window.location.href = 'about.html'; return;
+                    case 2: window.location.href = 'services.html'; return;
+                    case 3: window.location.href = 'contact.html'; return;
+                }
+                document.getElementById(targetSection).scrollIntoView({ behavior: 'smooth' });
+                makeActive(index);
+            });
+        });
     </script>
-  </body>
+</body>
 </html>
