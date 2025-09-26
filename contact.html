@@ -17,9 +17,6 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="Novatech.css" />
-
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -112,11 +109,15 @@
             width: 100%;
         }
 
-        .menu-toggle {
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
             display: none;
+            background: none;
+            border: none;
             font-size: 1.5rem;
-            cursor: pointer;
             color: var(--text-dark);
+            cursor: pointer;
+            padding: 0.75rem;
         }
 
         /* Hero Section */
@@ -146,7 +147,10 @@
             font-weight: 600;
             margin-bottom: 1.5rem;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 3;
         }
 
         .hero-section h1 {
@@ -172,7 +176,9 @@
             background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             animation: float 6s ease-in-out infinite;
+            z-index: 1;
         }
 
         .floating-1 { top: 15%; right: 10%; width: 80px; height: 80px; animation-delay: 0s; }
@@ -332,24 +338,41 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-wrapper nav {
-                display: none;
-                flex-direction: column;
-                background: white;
-                position: absolute;
+            /* Mobile Nav - Modern Style */
+            nav#navbar {
+                position: fixed;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                padding: 1rem 0;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem 0;
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                list-style: none;
+                margin: 0;
+                gap: 0;
             }
 
-            .nav-wrapper nav.show {
-                display: flex;
+            nav#navbar.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
             }
 
-            .menu-toggle {
+            nav#navbar a {
+                padding: 1rem 2rem;
                 display: block;
+                text-align: center;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                padding-right: 2rem; /* ✅ Critical: prevents touching right edge */
+                margin-right: 0;
             }
 
             .hero-section h1 {
@@ -379,7 +402,9 @@
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
             </nav>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
@@ -429,7 +454,7 @@
                 <!-- Contact Info -->
                 <div class="contact-info" data-aos="fade-left">
                     <h3>Our Details</h3>
-                    <p><strong>Email:</strong> <a href="mailto:shaikuzair57@gmail.com" style="color:#667eea;">shaikuzair57@gmail.com</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:novatechtechnologiespvtltd@gmail.com" style="color:#667eea;">novatechtechnologiespvtltd@gmail.com</a></p>
                     <p><strong>Phone:</strong> <a href="tel:+917842448944" style="color:#667eea;">+91 78424 48944</a></p>
                     <p><strong>Office:</strong> Madanapalle, Chittoor District, Andhra Pradesh, India</p>
                     <p><strong>Technical Unit:</strong> MITS College, Angallu Campus</p>
@@ -454,23 +479,33 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize AOS
         AOS.init({
             duration: 1000,
             easing: 'ease-out',
             once: true
         });
 
-        function toggleMenu() {
-            document.getElementById("navbar").classList.toggle("show");
-        }
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navbar = document.getElementById('navbar');
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            const navbar = document.getElementById('navbar');
-            const menuToggle = document.querySelector('.menu-toggle');
-            if (!menuToggle.contains(e.target) && !navbar.contains(e.target)) {
-                navbar.classList.remove('show');
+        mobileMenuBtn.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
             }
+        });
+
+        // Close menu when clicking a nav link
+        document.querySelectorAll('#navbar a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            });
         });
     </script>
 </body>
