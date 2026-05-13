@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSTFlowPro | Intelligent Compliance Architecture</title>
+    <meta name="description" content="The first AI-driven billing engine for high-growth Indian enterprises. Eliminate 99% of GST errors.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Logo_Company.jpeg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thenovatech.in/gstflowpro.html">
+    <meta property="og:title" content="GSTFlowPro | Intelligent Compliance Architecture">
+    <meta property="og:description" content="The first AI-driven billing engine for high-growth Indian enterprises. Eliminate 99% of GST errors.">
+    <meta property="og:image" content="Logo_Company.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thenovatech.in/gstflowpro.html">
+    <meta property="twitter:title" content="GSTFlowPro | Intelligent Compliance Architecture">
+    <meta property="twitter:description" content="The first AI-driven billing engine for high-growth Indian enterprises. Eliminate 99% of GST errors.">
+    <meta property="twitter:image" content="Logo_Company.jpeg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="modern.css">
+    <style>
+        .invoice-preview {
+            background: #fff;
+            padding: 3rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-premium);
+            border: 1px solid var(--border);
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            transform: rotate(-1deg);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* SCANNING ANIMATION */
+        .invoice-preview::before {
+            content: "";
+            position: absolute;
+            top: -100%; left: 0; width: 100%; height: 20%;
+            background: linear-gradient(to bottom, transparent, var(--accent-glow), transparent);
+            z-index: 2;
+            animation: scan 3s infinite linear;
+        }
+        @keyframes scan {
+            0% { top: -20%; }
+            100% { top: 100%; }
+        }
+
+        .invoice-preview:hover { transform: rotate(0) scale(1.02); }
+        .inv-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--bg-alt); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+        .inv-tag { background: #ecfdf5; color: #059669; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.65rem; font-weight: 800; text-transform: uppercase; }
+        .inv-bar { height: 10px; background: var(--bg-alt); border-radius: 100px; margin-bottom: 0.75rem; }
+        
+        .waitlist-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 1.25rem 1.5rem;
+            font-family: inherit;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            outline: none;
+        }
+        .waitlist-form {
+            display: flex;
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 100px;
+            padding: 0.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+        .waitlist-form:focus-within { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-premium); }
+    </style>
+</head>
+<body>
+
+    <!-- Dynamic Background -->
+    <div class="ambient-scene">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt"></i>
+                NOVATECH
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Nexus</a>
+                <a href="services.html">Software</a>
+                <a href="ai-services.html">AI Solutions</a>
+                <a href="products.html" class="active">Foundry</a>
+                <a href="about.html">Architecture</a>
+                <a href="contact.html" class="btn-pitch">Book Discovery</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="reveal">
+                    <div class="hero-badge" style="background: var(--accent); color: white; border: none;">Launching Q2 2026</div>
+                    <h1 style="max-width: 1000px; margin-left: auto; margin-right: auto;">Stop Correcting Errors. <br><span class="text-gradient">Start Growing.</span></h1>
+                    <p>The only billing engine that thinks before you click. Powered by proprietary AI, GSTFlowPro eliminates compliance risk at the source.</p>
+                    <div style="display: flex; gap: 1.5rem; justify-content: center;">
+                        <a href="#waitlist" class="btn btn-primary">Join the Beta Registry</a>
+                        <a href="#features" class="btn btn-outline">Technical Overview</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="features">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: center;">
+                    <div class="reveal">
+                        <h2 style="font-size: 3.5rem;">Precision <br><span class="text-gradient">Engineered.</span></h2>
+                        <p>GSTFlowPro acts as a live validation layer between your sales operations and the government portal, ensuring 100% data integrity in real-time.</p>
+                        
+                        <div style="display: grid; gap: 3rem; margin-top: 4rem;">
+                            <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                                <div style="font-size: 2rem; color: var(--accent);"><i class="fas fa-shield-check"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Zero-Error Guarantee</h4>
+                                    <p style="font-size: 1rem; margin-bottom: 0; color: var(--text-muted);">AI-powered pattern matching detects filing anomalies before they become legal liabilities.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 2rem; align-items: flex-start;">
+                                <div style="font-size: 2rem; color: var(--accent);"><i class="fas fa-bolt-lightning"></i></div>
+                                <div>
+                                    <h4 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Sub-ms Validation</h4>
+                                    <p style="font-size: 1rem; margin-bottom: 0; color: var(--text-muted);">Lightning-fast lookup ensures your workflow never slows down, even at enterprise scale.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reveal" style="perspective: 1000px;">
+                        <div class="invoice-preview">
+                            <div class="inv-header">
+                                <div>
+                                    <div style="font-weight: 800; font-size: 1.1rem; margin-bottom: 0.25rem;">INVOICE #001</div>
+                                    <div class="inv-tag"><i class="fas fa-check-circle"></i> AI Validated</div>
+                                </div>
+                                <div style="font-weight: 900; color: var(--text-main); font-family: var(--font-heading);">NOVATECH</div>
+                            </div>
+                            <div class="inv-bar" style="width: 80%;"></div>
+                            <div class="inv-bar" style="width: 60%;"></div>
+                            <div style="margin: 2.5rem 0; border-top: 2px solid var(--bg-alt); padding-top: 1.5rem;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem;"><div class="inv-bar" style="width: 40%;"></div><div class="inv-bar" style="width: 15%;"></div></div>
+                                <div style="display: flex; justify-content: space-between;"><div class="inv-bar" style="width: 30%;"></div><div class="inv-bar" style="width: 10%;"></div></div>
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; gap: 1.5rem; align-items: center; margin-top: 2.5rem;">
+                                <div style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Final Total</div>
+                                <div style="font-weight: 800; font-size: 2rem; color: var(--accent); font-family: var(--font-heading);">₹ 1,24,950</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Trust Bar -->
+        <section class="section" style="padding: 0;">
+            <div class="container">
+                <div class="trust-bar reveal" style="background: var(--bg-alt); border: none;">
+                    <div class="stat-item"><span class="stat-value">99%</span><span class="stat-label">Error Reduction</span></div>
+                    <div class="stat-item"><span class="stat-value">500+</span><span class="stat-label">Beta Queries/sec</span></div>
+                    <div class="stat-item"><span class="stat-value">SECURE</span><span class="stat-label">Bank-Grade AES-256</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Waitlist Conversion -->
+        <section class="section py-0" id="waitlist">
+            <div class="container">
+                <div class="reveal" style="background: var(--primary); color: white; border: none; padding: 10rem 4rem; border-radius: var(--radius-lg); text-align: center; position: relative; overflow: hidden;">
+                    <div class="orb orb-1" style="opacity: 0.1;"></div>
+                    <div style="position: relative; z-index: 1;">
+                        <div class="hero-badge" style="background: rgba(255,255,255,0.1); color: white; border: none; margin-bottom: 2rem;">Phase 1 Rolling Out Soon</div>
+                        <h2 style="font-size: 4rem; margin-bottom: 2rem; color: white;">Secure Your Competitive Edge.</h2>
+                        <p style="margin: 0 auto 5rem; max-width: 700px; color: rgba(255,255,255,0.7);">We are prioritizing high-growth enterprises for our initial rollout. Join the waitlist to receive early-access pricing and integration support.</p>
+                        
+                        <form class="waitlist-form">
+                            <input type="email" placeholder="Enter your business email" class="waitlist-input">
+                            <button type="submit" class="btn btn-white">Claim Your Spot</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-block">
+                    <a href="index.html" class="logo">
+                        <img src="Logo_Company.jpeg" alt="Novatech Logo" style="height: 40px; width: auto; vertical-align: middle; border-radius: 4px; margin-right: 10px;">
+                        NOVATECH
+                    </a>
+                    <p>Delivering high-performance AI and robust software architecture for the next era of business computing.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="gstflowpro.html">GSTFlowPro</a></li>
+                        <li><a href="https://image.thenovatech.in">Image Editor</a></li>
+                        <li><a href="products.html">Product Foundry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">Architecture</a></li>
+                        <li><a href="services.html">Systems</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Direct</h4>
+                    <ul>
+                        <li><a href="mailto:info@thenovatech.in">info@thenovatech.in</a></li>
+                        <li><a href="https://www.linkedin.com/company/novatech-technologies-private-limited/">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 Novatech Technologies Private Limited. All Rights Reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

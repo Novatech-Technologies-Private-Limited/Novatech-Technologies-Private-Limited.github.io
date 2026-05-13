@@ -1,512 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us | Novatech Technologies Private Limited</title>
-    <meta name="description" content="Get in touch with Novatech Technologies Pvt Ltd for AI, Full Stack, Cloud, and WordPress solutions. We're based in Madanapalle, Andhra Pradesh." />
-    <meta name="keywords" content="Novatech contact, tech company India, AI development, full-stack services, IT training" />
-    <meta name="author" content="Novatech Technologies Pvt Ltd" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiate Contact | Novatech Technologies</title>
+    <meta name="description" content="Ready to deploy specialized AI intelligence, mobile applications, or custom enterprise software? Our architects are ready to evaluate your project parameters.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Logo_Company.jpeg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thenovatech.in/contact.html">
+    <meta property="og:title" content="Initiate Contact | Novatech Technologies">
+    <meta property="og:description" content="Ready to deploy specialized AI intelligence, mobile applications, or custom enterprise software? Our architects are ready to evaluate your project parameters.">
+    <meta property="og:image" content="Logo_Company.jpeg">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://thenovatech.in/contact.html">
+    <meta property="twitter:title" content="Initiate Contact | Novatech Technologies">
+    <meta property="twitter:description" content="Ready to deploy specialized AI intelligence, mobile applications, or custom enterprise software? Our architects are ready to evaluate your project parameters.">
+    <meta property="twitter:image" content="Logo_Company.jpeg">
 
-    <!-- Font Awesome Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="modern.css">
     <style>
-        :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
-            --white: #ffffff;
-            --text-dark: #1a202c;
-            --text-light: #a0aec0;
-            --background-light: #f7fafc;
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 1px 3px rgba(0,0,0,0.06);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15), 0 4px 10px rgba(0,0,0,0.06);
-            --shadow-xl: 0 20px 25px rgba(0,0,0,0.15), 0 10px 10px rgba(0,0,0,0.04);
-            --border-light: #e2e8f0;
-            --form-bg: rgba(255, 255, 255, 0.9);
-            --input-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.12);
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background: var(--background-light);
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-light);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.75rem;
-            font-weight: 800;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        nav#navbar {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        nav#navbar a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        nav#navbar a:hover {
-            color: #667eea;
-        }
-
-        nav#navbar a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: width 0.3s ease;
-        }
-
-        nav#navbar a:hover::after {
-            width: 100%;
-        }
-
-        /* Mobile Menu Button */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            cursor: pointer;
-            padding: 0.75rem;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            min-height: 80vh;
-            background: var(--dark-gradient);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 700px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            z-index: 3;
-        }
-
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a0aec0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.85);
-            margin-bottom: 2rem;
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            animation: float 6s ease-in-out infinite;
-            z-index: 1;
-        }
-
-        .floating-1 { top: 15%; right: 10%; width: 80px; height: 80px; animation-delay: 0s; }
-        .floating-2 { bottom: 20%; left: 15%; width: 60px; height: 60px; animation-delay: 2s; }
-        .floating-3 { top: 60%; right: 5%; width: 70px; height: 70px; animation-delay: 4s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 6rem 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-description {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            color: var(--text-light);
-            font-size: 1.1rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        /* Form Styling */
-        .contact-form form {
-            background: var(--form-bg);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow-lg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .contact-form label {
-            display: block;
-            margin: 0 0 0.5rem;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px 16px;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--input-shadow);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary-gradient);
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        /* Contact Info */
-        .contact-info {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-light);
-            transition: all 0.3s ease;
-        }
-
-        .contact-info:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-dark);
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .contact-info p {
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-            line-height: 1.7;
-        }
-
-        .contact-info strong {
-            color: #2d3748;
-        }
-
-        .address-note {
-            background: #ebf4ff;
-            border-left: 4px solid #667eea;
-            padding: 1rem;
-            border-radius: 0 8px 8px 0;
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            color: #2d3748;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark-gradient);
-            color: rgba(255, 255, 255, 0.7);
-            padding: 3rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            /* Mobile Nav - Modern Style */
-            nav#navbar {
-                position: fixed;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--white);
-                flex-direction: column;
-                padding: 2rem 0;
-                box-shadow: var(--shadow-lg);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s ease;
-                list-style: none;
-                margin: 0;
-                gap: 0;
-            }
-
-            nav#navbar.active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            nav#navbar a {
-                padding: 1rem 2rem;
-                display: block;
-                text-align: center;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-                padding-right: 2rem; /* ✅ Critical: prevents touching right edge */
-                margin-right: 0;
-            }
-
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .contact-form form,
-            .contact-info {
-                padding: 2rem;
-            }
-        }
+        .form-input { width: 100%; padding: 1.25rem; background: white; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; color: var(--text-main); outline: none; transition: all 0.2s; }
+        .form-input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+        .form-label { display: block; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 0.5rem; }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
-    <header>
-        <div class="container nav-wrapper">
-            <a href="index.html" class="logo">Novatech</a>
-            <nav id="navbar">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="floating-element floating-1"></div>
-        <div class="floating-element floating-2"></div>
-        <div class="floating-element floating-3"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge"><i class="fas fa-envelope"></i> Let's Connect</div>
-                <h1>We'd Love to Hear From You</h1>
-                <p class="hero-subtitle">
-                    Have a project in mind? Need technical guidance or training? Reach out — we respond within 24 hours.
-                </p>
+    <div class="ambient-scene"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt"></i>
+                NOVATECH
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Nexus</a>
+                <a href="services.html">Software</a>
+                <a href="ai-services.html">AI Solutions</a>
+                <a href="products.html">Foundry</a>
+                <a href="about.html">Architecture</a>
+                <a href="contact.html" class="active">Book Discovery</a>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" data-aos="fade-up">
-        <div class="container">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-description">
-                Whether you're a startup, enterprise, or student, we’re here to help you succeed with technology.
-            </p>
-
-            <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form" data-aos="fade-right">
-                    <form action="https://formspree.io/f/xgvygpyl" method="POST">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required />
-
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required />
-
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-
-                        <button type="submit" class="btn">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
+    </nav>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="reveal">
+                    <div class="hero-badge">Discovery</div>
+                    <h1>Initiate <br><span class="text-gradient">Communication.</span></h1>
+                    <p>Ready to deploy specialized AI intelligence, mobile applications, or custom enterprise software? Our architects are ready to evaluate your project parameters.</p>
                 </div>
-
-                <!-- Contact Info -->
-                <div class="contact-info" data-aos="fade-left">
-                    <h3>Our Details</h3>
-                    <p><strong>Email:</strong> <a href="mailto:novatechtechnologiespvtltd@gmail.com" style="color:#667eea;">novatechtechnologiespvtltd@gmail.com</a></p>
-                    <p><strong>Phone:</strong> <a href="tel:+917842448944" style="color:#667eea;">+91 78424 48944</a></p>
-                    <p><strong>Office:</strong> Madanapalle, Chittoor District, Andhra Pradesh, India</p>
-                    <p><strong>Technical Unit:</strong> MITS College, Angallu Campus</p>
-                    <p><strong>Business Hours:</strong> Mon–Sat, 10:00 AM – 6:00 PM IST</p>
-
-                    <div class="address-note">
-                        <strong>Note:</strong> Our registered office is in Madanapalle. Development and training activities are conducted at MITS Angallu.
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="card-premium reveal" style="padding: 4rem;">
+                        <h2 style="font-size: 2rem; margin-bottom: 3rem; text-align: center;">Message Pipeline</h2>
+                        <form style="display: grid; gap: 2rem;">
+                            <div><label class="form-label">Identity</label><input type="text" placeholder="Full Name" class="form-input"></div>
+                            <div><label class="form-label">Data Endpoint</label><input type="email" placeholder="Business Email" class="form-input"></div>
+                            <div><label class="form-label">Objective</label><select class="form-input" style="appearance: none; cursor: pointer;"><option value="software">Web & App Development</option><option value="ai">AI Solutions / Fine-Tuning</option><option value="saas">Custom SaaS Development</option><option value="erp">Enterprise ERP Solutions</option></select></div>
+                            <div><label class="form-label">Parameters</label><textarea placeholder="Describe your project requirements..." rows="5" class="form-input" style="resize: none;"></textarea></div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Message</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+        </section>
+    </main>
     <footer>
         <div class="container">
-            <p>&copy; 2025 Novatech Technologies Private Limited. All rights reserved.</p>
-            <p>CIN: U85500AP2025PTC119897 | RoC: Vijayawada</p>
+            <div class="footer-content">
+                <div class="footer-logo-block">
+                    <a href="index.html" class="logo">
+                        <img src="Logo_Company.jpeg" alt="Novatech Logo" style="height: 40px; width: auto; vertical-align: middle; border-radius: 4px; margin-right: 10px;">
+                        NOVATECH
+                    </a>
+                    <p>Delivering high-performance AI and robust software architecture for the next era of business computing.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="gstflowpro.html">GSTFlowPro</a></li>
+                        <li><a href="https://image.thenovatech.in">Image Editor</a></li>
+                        <li><a href="products.html">Product Foundry</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">Architecture</a></li>
+                        <li><a href="services.html">Systems</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Direct</h4>
+                    <ul>
+                        <li><a href="mailto:info@thenovatech.in">info@thenovatech.in</a></li>
+                        <li><a href="https://www.linkedin.com/company/novatech-technologies-private-limited/">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>&copy; 2026 Novatech Technologies Private Limited. All Rights Reserved.</div>
+            </div>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            easing: 'ease-out',
-            once: true
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
         });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navbar = document.getElementById('navbar');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                icon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
-
-        // Close menu when clicking a nav link
-        document.querySelectorAll('#navbar a').forEach(link => {
-            link.addEventListener('click', () => {
-                navbar.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
-            });
-        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
